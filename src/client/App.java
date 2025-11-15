@@ -1,5 +1,5 @@
+package client;
 import builder.Builder;
-import builder.concretebuilder.TextMessageBuilder;
 import factory.Factory;
 import observer.ConsoleListener;
 import observer.MessageBroker;
