@@ -1,9 +1,12 @@
 package product;
 
+import observer.MessageListener;
+import product.component.MessageComponent;
+
 import java.time.Instant;
 import java.util.Map;
 
-public class Message {
+public class Message implements MessageComponent {
     private final String type;
     private final String sender;
     private final String recipient;
@@ -28,5 +31,29 @@ public class Message {
                 " content: " + content + "\n" +
                 " timestamp: " + timestamp + "\n" +
                 " metadate: " + metadata;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    public Map<String, String> getMetadata() {
+        return metadata;
     }
 }
