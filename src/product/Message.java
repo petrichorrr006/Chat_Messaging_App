@@ -3,7 +3,9 @@ package product;
 import java.time.Instant;
 import java.util.Map;
 
-public class Message {
+import product.component.MessageComponent;
+
+public class Message implements MessageComponent{
     private final String type;
     private final String sender;
     private final String recipient;
@@ -19,6 +21,13 @@ public class Message {
         this.timestamp = timestamp;
         this.metadata = metadata;
     }
+
+    @Override public String getType() { return type; }
+    @Override public String getSender() { return sender; }
+    @Override public String getRecipient() { return recipient; }
+    @Override public String getContent() { return content; }
+    @Override public Instant getTimestamp() { return timestamp; }
+    @Override public Map<String, String> getMetadata() { return metadata; }
 
     @Override
     public String toString() {
