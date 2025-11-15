@@ -1,7 +1,8 @@
 package builder;
 
-import java.util.Map;
 import product.Message;
+
+import java.util.Map;
 
 public interface Builder {
     public Builder setSender(String sender);
