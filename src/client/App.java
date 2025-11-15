@@ -1,8 +1,8 @@
 package client;
 import builder.Builder;
 import factory.Factory;
-import observer.ConsoleListener;
 import observer.MessageBroker;
+import observer.concrete_subscriber.ConsoleListener;
 import product.Message;
 
 import java.util.HashMap;
