@@ -1,8 +1,9 @@
 package factory;
 
-import builder.concrete_builders.ImageMessageBuilder;
-import builder.concrete_builders.TextMessageBuilder;
+
 import builder.Builder;
+import builder.concretebuilder.ImageMessageBuilder;
+import builder.concretebuilder.TextMessageBuilder;
 
 public class Factory {
     public static Builder createBuilder(String type) {
