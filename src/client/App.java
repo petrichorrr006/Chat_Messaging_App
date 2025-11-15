@@ -1,12 +1,13 @@
 package client;
 import adapter.*;
+import adapter.service.RestService;
+import adapter.service.XmppService;
 import builder.Builder;
 import decorator.concrete.EncryptionDecorator;
 import decorator.concrete.LoggingDecorator;
 import factory.Factory;
 import observer.*;
 import observer.concrete_subscriber.ConsoleListener;
-import product.Message;
 import product.component.MessageComponent;
 
 import java.util.HashMap;

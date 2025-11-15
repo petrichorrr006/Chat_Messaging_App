@@ -1,6 +1,5 @@
 package observer;
 
-import product.Message;
 import product.component.MessageComponent;
 
 import java.util.List;

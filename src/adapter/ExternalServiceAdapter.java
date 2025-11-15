@@ -1,7 +1,7 @@
 package adapter;
 
+import adapter.service.ExternalMessageService;
 import observer.subscriber.MessageListener;
-import product.Message;
 import product.component.MessageComponent;
 
 public class ExternalServiceAdapter implements MessageListener {
