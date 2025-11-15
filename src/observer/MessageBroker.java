@@ -6,6 +6,9 @@ import product.component.MessageComponent;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import observer.publisher.MessagePublisher;
+import observer.subscriber.MessageListener;
+
 public class MessageBroker implements MessagePublisher{
     private final List<MessageListener> listeners = new CopyOnWriteArrayList<>();
     @Override

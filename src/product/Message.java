@@ -1,10 +1,11 @@
 package product;
 
-import observer.MessageListener;
 import product.component.MessageComponent;
 
 import java.time.Instant;
 import java.util.Map;
+
+import observer.subscriber.MessageListener;
 
 public class Message implements MessageComponent {
     private final String type;

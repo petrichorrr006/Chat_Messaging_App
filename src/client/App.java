@@ -5,6 +5,7 @@ import decorator.concrete.EncryptionDecorator;
 import decorator.concrete.LoggingDecorator;
 import factory.Factory;
 import observer.*;
+import observer.concrete_subscriber.ConsoleListener;
 import product.Message;
 import product.component.MessageComponent;
 

@@ -1,6 +1,6 @@
 package adapter;
 
-import observer.MessageListener;
+import observer.subscriber.MessageListener;
 import product.Message;
 import product.component.MessageComponent;
 
