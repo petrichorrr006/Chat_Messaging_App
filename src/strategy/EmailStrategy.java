@@ -5,6 +5,6 @@ import product.component.MessageComponent;
 public class EmailStrategy implements SendStrategy {
     @Override
     public void send(MessageComponent message) {
-        System.out.println("[EMAIL] Sending to " + message.getRecipient() + ": " + message.getContent());
+        System.out.println("[EMAIL] \n"+ message.toString());
     }
 }

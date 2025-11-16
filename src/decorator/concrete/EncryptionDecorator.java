@@ -26,6 +26,10 @@ public class EncryptionDecorator extends MessageDecorator {
 
     @Override
     public String toString() {
-        return super.toString() + "\n [Encrypted] " + getContent();
+        return "----------------------------" + "\n" +
+                " From: " + messageComponent.getSender() + "\n" +
+                " To: " + messageComponent.getRecipient() + "\n" +
+                " content: " + getContent() + "\n" +
+                "----------------------------" + "\n";
     }
 }
