@@ -13,7 +13,6 @@ public class ExternalServiceAdapter implements MessageListener {
 
     @Override
     public void onMessage(MessageComponent message) {
-        // message -> external service format
         externalMessageService.sendMessage(message);
     }
 }

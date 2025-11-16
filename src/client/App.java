@@ -27,7 +27,6 @@ public class App {
                 .setSender("Alisher")
                 .setRecipient("Alexander")
                 .setContent("some random text lorem lorem lorem")
-                .setMetadate(new HashMap<>())
                 .build();
         message = new EncryptionDecorator(message);
         message = new LoggingDecorator(message);

@@ -37,11 +37,6 @@ public class MessageDecorator implements MessageComponent {
     }
 
     @Override
-    public Map<String, String> getMetadata() {
-        return messageComponent.getMetadata();
-    }
-
-    @Override
     public String toString() {
         return messageComponent.toString();
     }

@@ -28,14 +28,9 @@ public class ImageMessageBuilder implements builder.Builder {
         return this;
     }
     @Override
-    public builder.Builder setMetadate(Map<String, String> metadata) {
-        this.metadata = metadata;
-        return this;
-    }
-    @Override
     public Message build() {
         this.timestamp = Instant.now();
-        return new Message("Image", sender, recipient, content, timestamp, metadata);
+        return new Message("Image", sender, recipient, content, timestamp);
     }
 
 }
