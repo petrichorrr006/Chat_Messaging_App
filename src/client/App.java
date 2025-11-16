@@ -1,7 +1,6 @@
 package client;
 import adapter.*;
 import adapter.service.RestService;
-import adapter.service.XmppService;
 import builder.Builder;
 import decorator.concrete.EncryptionDecorator;
 import decorator.concrete.LoggingDecorator;
