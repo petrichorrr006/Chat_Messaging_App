@@ -1,7 +1,6 @@
 package decorator.base;
 
 import java.time.Instant;
-import java.util.Map;
 import product.component.MessageComponent;
 
 public class MessageDecorator implements MessageComponent {

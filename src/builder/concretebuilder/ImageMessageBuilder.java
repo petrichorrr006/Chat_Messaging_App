@@ -1,7 +1,5 @@
 package builder.concretebuilder;
 
-import java.util.Map;
-
 import product.Message;
 import java.time.Instant;
 
@@ -10,7 +8,6 @@ public class ImageMessageBuilder implements builder.Builder {
     private String recipient;
     private String content;
     private Instant timestamp;
-    private Map<String, String> metadata;
 
     @Override
     public builder.Builder setSender(String sender) {

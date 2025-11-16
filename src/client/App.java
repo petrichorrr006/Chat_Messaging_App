@@ -10,8 +10,6 @@ import observer.*;
 import observer.concrete_subscriber.ConsoleListener;
 import product.component.MessageComponent;
 
-import java.util.HashMap;
-
 
 public class App {
     public static void main(String[] args) {
