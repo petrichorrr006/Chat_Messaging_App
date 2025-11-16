@@ -21,11 +21,12 @@ public class Message implements MessageComponent {
 
     @Override
     public String toString() {
-        return " type: " + type + "\n" +
-                " sender: " + sender + "\n" +
-                " recipient: " + recipient + "\n" +
+        return "----------------------------" + "\n" +
+                "[" + type + "]" + "\n" +
+                " From: " + sender + "\n" +
+                " To: " + recipient + "\n" +
                 " content: " + content + "\n" +
-                " timestamp: " + timestamp + "\n";
+                "----------------------------" + "\n";
     }
 
     public String getType() {
