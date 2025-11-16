@@ -8,9 +8,9 @@ import factory.Factory;
 import observer.*;
 import observer.concrete_subscriber.ConsoleListener;
 import product.component.MessageComponent;
-import strategy.EmailStrategy;
 import strategy.SendStrategy;
-import strategy.SmsStrategy;
+import strategy.concrete.EmailStrategy;
+import strategy.concrete.SmsStrategy;
 
 
 public class App {

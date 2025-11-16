@@ -1,0 +1,116 @@
+@startuml
+
+' ====================
+' COMPONENT / PRODUCT
+' ====================
+interface MessageComponent {
+    + getType(): String
+    + getSender(): String
+    + getRecipient(): String
+    + getContent(): String
+    + getTimestamp(): Instant
+    + getMetadata(): Map
+}
+
+class Message implements MessageComponent {
+    - type: String
+    - sender: String
+    - recipient: String
+    - content: String
+    - timestamp: Instant
+    - metadata: Map
+}
+
+MessageComponent <|-- Message
+
+' ====================
+' BUILDER + FACTORY
+' ====================
+abstract class Builder {
+    + setType(String)
+    + setSender(String)
+    + setRecipient(String)
+    + setContent(String)
+    + build(): MessageComponent
+}
+
+class TextMessageBuilder
+class ImageMessageBuilder
+
+Builder <|-- TextMessageBuilder
+Builder <|-- ImageMessageBuilder
+
+class BuilderFactory {
+    + createBuilder(type: String): Builder
+}
+
+' ====================
+' DECORATOR
+' ====================
+abstract class MessageDecorator implements MessageComponent {
+    # wrappee: MessageComponent
+}
+
+class EncryptionDecorator {
+    - encrypt(String): String
+}
+
+class LoggingDecorator {
+    - log()
+}
+
+MessageDecorator <|-- EncryptionDecorator
+MessageDecorator <|-- LoggingDecorator
+MessageComponent <|-- MessageDecorator
+
+' ====================
+' STRATEGY
+' ====================
+interface SendStrategy {
+    + send(MessageComponent)
+}
+
+class EmailStrategy
+class SmsStrategy
+class ExternalMessageService
+
+SendStrategy <|-- EmailStrategy
+SendStrategy <|-- SmsStrategy
+SendStrategy <|-- ExternalMessageService
+
+' ====================
+' ADAPTER
+' ====================
+class ExternalServiceAdapter implements SendStrategy {
+    - externalService: ExternalMessageService
+}
+
+SendStrategy <|-- ExternalServiceAdapter
+
+' ====================
+' OBSERVER
+' ====================
+interface Listener {
+    + update(MessageComponent)
+}
+
+class ConsoleListener
+class MessageBroker {
+    - listeners: List<Listener>
+    + addListener(Listener)
+    + publish(MessageComponent)
+}
+
+Listener <|-- ConsoleListener
+MessageBroker --> Listener : notifies
+
+' ====================
+' RELATIONS
+' ====================
+BuilderFactory --> Builder
+Builder --> MessageComponent
+MessageDecorator --> MessageComponent
+SendStrategy --> MessageComponent
+MessageBroker --> MessageComponent
+
+@enduml
